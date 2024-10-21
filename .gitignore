@@ -47,3 +47,4 @@ android/
 linux/
 macos/
 test/
+firebase.json

@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'package:assets_audio_player/assets_audio_player.dart';
 import 'package:flutter/material.dart';
 // ignore: avoid_web_libraries_in_flutter
 import 'dart:html' as html;
@@ -127,10 +128,11 @@ class _ProctorWrapperState extends State<ProctorWrapper> {
     }
   }
 
-  void _playWarningSound() {
-    html.AudioElement audio = html.AudioElement();
-    audio.src = 'assets/beep.mp3';
-    audio.play();
+
+  void _playWarningSound() async{
+    AssetsAudioPlayer.newPlayer().open(
+      Audio("assets/beep.mp3"),
+        );
   }
 
   void _toggleDetection() {

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <!--
     If you are serving your web app in a path other than the root, change the
@@ -26,7 +27,7 @@
   <meta name="apple-mobile-web-app-title" content="webproctor">
   <link rel="apple-touch-icon" href="icons/Icon-192.png">
   <!-- Favicon -->
-  <link rel="icon" type="image/png" href="favicon.png"/>
+  <link rel="icon" type="image/png" href="favicon.png" />
 
   <title>webproctor</title>
   <link rel="manifest" href="manifest.json">
@@ -37,8 +38,8 @@
   </script>
   <!-- This script adds the flutter initialization JS code -->
   <script src="flutter.js" defer></script>
-<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
-<script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/blazeface"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/blazeface"></script>
   <script>
     let model;
     let detectionInterval;
@@ -73,25 +74,33 @@
       eyeStateCallback(false);
     }
     loadModel();
-        window.oncontextmenu = function(event) {
-          event.preventDefault();
-        event.stopPropagation();
-        return false;
-  };
+    window.oncontextmenu = function (event) {
+      event.preventDefault();
+      event.stopPropagation();
+      return false;
+    };
+
+
+    var audio = new Audio();
+    function playAudio(url) {
+      audio.src = url;
+      audio.play().catch(e => console.error("Error playing audio:", e));
+    }
   </script>
 </head>
+
 <body>
-    <video id="webcam" autoplay playsinline width="640" height="480" style="display: none;"></video>
+  <video id="webcam" autoplay playsinline width="640" height="480" style="display: none;"></video>
 
   <script>
-    window.addEventListener('load', function(ev) {
+    window.addEventListener('load', function (ev) {
       // Download main.dart.js
       _flutter.loader.loadEntrypoint({
         serviceWorker: {
           serviceWorkerVersion: serviceWorkerVersion,
         },
-        onEntrypointLoaded: function(engineInitializer) {
-          engineInitializer.initializeEngine().then(function(appRunner) {
+        onEntrypointLoaded: function (engineInitializer) {
+          engineInitializer.initializeEngine().then(function (appRunner) {
             appRunner.runApp();
           });
         }
@@ -99,4 +108,5 @@
     });
   </script>
 </body>
+
 </html>

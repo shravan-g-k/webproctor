@@ -305,7 +305,7 @@ class _CreateExamPageState extends State<CreateExamPage> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        question,
+                        "${index + 1}.$question",
                         style: const TextStyle(
                           fontSize: 20,
                         ),

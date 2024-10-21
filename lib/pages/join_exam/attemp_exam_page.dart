@@ -51,10 +51,11 @@ class QuizPageState extends State<QuizPage> {
       barrierDismissible: false,
       builder: (BuildContext context) {
         return AlertDialog(
-          title: const Text('Quiz Complete'),
+          title: const Text('Quiz Complete',
+              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Colors.white)),
           content: Text(
             'Your score: $score out of ${questions.length}',
-            style: const TextStyle(fontSize: 18),
+            style: const TextStyle(fontSize: 18, color: Colors.white),
           ),
           actions: [
             TextButton(
